@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>multisim tutorials &#8212; multisim 0.0.1 documentation</title>
+    <title>MultiSim tutorials &#8212; multisim 0.1 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -48,8 +48,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Basic usage" href="meeg_simulator_basic.html" />
-    <link rel="prev" title="API Reference" href="../api/index.html" />
+    <link rel="next" title="Basic usage" href="multisim_basic.html" />
+    <link rel="prev" title="Simulator class reference" href="../api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,8 +118,8 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="multisim 0.0.1 documentation - Home"/>
-    <img src="" class="logo__image only-dark pst-js-only" alt="multisim 0.0.1 documentation - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="multisim 0.1 documentation - Home"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="multisim 0.1 documentation - Home"/>
   
   
 </a></div>
@@ -135,8 +135,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../api/index.html">
-    API reference
+  <a class="nav-link nav-internal" href="../api.html">
+    Simulator class
   </a>
 </li>
 
@@ -213,8 +213,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../api/index.html">
-    API reference
+  <a class="nav-link nav-internal" href="../api.html">
+    Simulator class
   </a>
 </li>
 
@@ -241,10 +241,10 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_basic.html">Basic usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_effect_size.html">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_basic.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
 </ul>
 </div>
 </nav></div>
@@ -285,7 +285,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">multisim tutorials</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">MultiSim tutorials</span></li>
   </ul>
 </nav>
 </div>
@@ -303,14 +303,42 @@
                 <article class="bd-article">
                   
   <section id="multisim-tutorials">
-<h1>multisim tutorials<a class="headerlink" href="#multisim-tutorials" title="Link to this heading">#</a></h1>
+<h1>MultiSim tutorials<a class="headerlink" href="#multisim-tutorials" title="Link to this heading">#</a></h1>
 <p>Here you can find tutorials on how to use the meg simulator</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_basic.html">Basic usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_effect_size.html">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_basic.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#Motivation-and-Overview">Motivation and Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#1.-Defining-an-Experimental-Design">1. Defining an Experimental Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#3.-Specifying-Time-Windows-for-the-Effects">3. Specifying Time Windows for the Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#4.-Simulating-the-Data">4. Simulating the Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#5.-Vizualizing-the-data:">5. Vizualizing the data:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#6.-Decoding-analysis">6. Decoding analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#1.-Setting-up-the-simulation">1. Setting up the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#2.-Specifying-the-temporal-kernel">2. Specifying the temporal kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#4.-Simulating-the-data">4. Simulating the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#5.-Vizualizing-the-data:">5. Vizualizing the data:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#6.-Decoding-analysis">6. Decoding analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multisim_intersubject_noise.html#1.-Setting-up-the-simulation">1. Setting up the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_intersubject_noise.html#2.-Simulating-the-data">2. Simulating the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_intersubject_noise.html#3.-Decoding-analysis-and-plotting">3. Decoding analysis and plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_effect_size.html">Specifying Multivariate Effect Size</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Trials-per-subject">Trials per subject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Number-of-channels">Number of channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Effect-size,-subjects-&amp;-trials">Effect size, subjects &amp; trials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Putting-it-all-together">Putting it all together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Conclusion-and-Practical-Recommendations">Conclusion and Practical Recommendations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Mathematical-formulation-of-effect-sizes-(advanced)">Mathematical formulation of effect sizes (advanced)</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -326,16 +354,16 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../api/index.html"
+       href="../api.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">API Reference</p>
+        <p class="prev-next-title">Simulator class reference</p>
       </div>
     </a>
     <a class="right-next"
-       href="meeg_simulator_basic.html"
+       href="multisim_basic.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

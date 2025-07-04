@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Specifying Multivariate Effect Size &#8212; multisim 0.0.1 documentation</title>
+    <title>Specifying Multivariate Effect Size &#8212; multisim 0.1 documentation</title>
   
   
   
@@ -39,17 +39,17 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/meeg_simulator_effect_size';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/multisim_effect_size';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Simulating multivariate effects with intersubject variability" href="meeg_simulator_intersubject_noise.html" />
+    <link rel="prev" title="Simulating multivariate effects with intersubject variability" href="multisim_intersubject_noise.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -118,8 +118,8 @@
       
     
     
-    <img src="../_static/logo.svg" class="logo__image only-light" alt="multisim 0.0.1 documentation - Home"/>
-    <img src="" class="logo__image only-dark pst-js-only" alt="multisim 0.0.1 documentation - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="multisim 0.1 documentation - Home"/>
+    <img src="" class="logo__image only-dark pst-js-only" alt="multisim 0.1 documentation - Home"/>
   
   
 </a></div>
@@ -135,8 +135,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../api/index.html">
-    API reference
+  <a class="nav-link nav-internal" href="../api.html">
+    Simulator class
   </a>
 </li>
 
@@ -213,8 +213,8 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../api/index.html">
-    API reference
+  <a class="nav-link nav-internal" href="../api.html">
+    Simulator class
   </a>
 </li>
 
@@ -241,9 +241,9 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_basic.html">Basic usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="meeg_simulator_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_basic.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Specifying Multivariate Effect Size</a></li>
 </ul>
 </div>
@@ -286,7 +286,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">multisim tutorials</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">MultiSim tutorials</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Specifying Multivariate Effect Size</span></li>
   </ul>
@@ -471,7 +471,7 @@ Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorial_meeg_simulator_effect_size_3_2.png" src="../_images/tutorial_meeg_simulator_effect_size_3_2.png" />
+<img alt="../_images/tutorial_multisim_effect_size_3_2.png" src="../_images/tutorial_multisim_effect_size_3_2.png" />
 </div>
 </div>
 <p>As we can see, increasing the number of trials only helps until a certain point. There is not so big of a difference between 160 and 320 trials.</p>
@@ -562,7 +562,7 @@ Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorial_meeg_simulator_effect_size_5_2.png" src="../_images/tutorial_meeg_simulator_effect_size_5_2.png" />
+<img alt="../_images/tutorial_multisim_effect_size_5_2.png" src="../_images/tutorial_multisim_effect_size_5_2.png" />
 </div>
 </div>
 </section>
@@ -670,7 +670,7 @@ Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorial_meeg_simulator_effect_size_7_2.png" src="../_images/tutorial_meeg_simulator_effect_size_7_2.png" />
+<img alt="../_images/tutorial_multisim_effect_size_7_2.png" src="../_images/tutorial_multisim_effect_size_7_2.png" />
 </div>
 </div>
 <p>Surprisingly, the decoding accuracy decreases with increased number of channels, which shouldn’t happen based on our normalization. However, this behavior is expected. When we increase the number of features, we need to decrease the magnitude of the activation in each channel that are part of the pattern to yield a similar theoretical effect size. If we kept the magnitude the same, we would increase the effect size when increasing the number of channels. However, by decreasing the magnitude in
@@ -826,7 +826,7 @@ Found 1 cluster
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorial_meeg_simulator_effect_size_10_2.png" src="../_images/tutorial_meeg_simulator_effect_size_10_2.png" />
+<img alt="../_images/tutorial_multisim_effect_size_10_2.png" src="../_images/tutorial_multisim_effect_size_10_2.png" />
 </div>
 </div>
 <p>Crucially, you should decide on the number of trials per subject to make sure you approach the ceiling decoding accuracy based on your effect size, and you should select the number of subjects to be able to detect an effect of that magnitude in your sample.</p>
@@ -6677,7 +6677,7 @@ Text(0, 0.5, &#39;Number of subjects&#39;)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorial_meeg_simulator_effect_size_13_2.png" src="../_images/tutorial_meeg_simulator_effect_size_13_2.png" />
+<img alt="../_images/tutorial_multisim_effect_size_13_2.png" src="../_images/tutorial_multisim_effect_size_13_2.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -6711,7 +6711,7 @@ Text(0, 0.5, &#39;Number of subjects&#39;)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/tutorial_meeg_simulator_effect_size_14_1.png" src="../_images/tutorial_meeg_simulator_effect_size_14_1.png" />
+<img alt="../_images/tutorial_multisim_effect_size_14_1.png" src="../_images/tutorial_multisim_effect_size_14_1.png" />
 </div>
 </div>
 </section>
@@ -6791,7 +6791,7 @@ Text(0, 0.5, &#39;Number of subjects&#39;)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="meeg_simulator_intersubject_noise.html"
+       href="multisim_intersubject_noise.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -6823,7 +6823,7 @@ Text(0, 0.5, &#39;Number of subjects&#39;)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Effect-size,-subjects-&amp;-trials">Effect size, subjects &amp; trials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Putting-it-all-together">Putting it all together</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Conclusion-and-Practical-Recommendations">Conclusion and Practical Recommendations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Mathematical-formulation-of-effect-sizes-(advanced)">Mathematical formulation of effect sizes (advanced)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Mathematical-formulation-of-effect-sizes-(advanced)">Mathematical formulation of effect sizes (advanced)</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Injecting-a-scaled-pattern">Injecting a scaled pattern</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Solving-for-the-amplitude-a">Solving for the amplitude <span class="math notranslate nohighlight">\(a\)</span></a></li>
 </ul>
@@ -6835,7 +6835,7 @@ Text(0, 0.5, &#39;Number of subjects&#39;)
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/tutorial/meeg_simulator_effect_size.ipynb.txt"
+      <li><a href="../_sources/tutorial/multisim_effect_size.ipynb.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
