@@ -65,42 +65,40 @@ Conditions: 2 (category, attention)
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mFile [39m[32m~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:363[39m, in [36mSimulator.export_to_mne[39m[34m(self, ch_type, X, mapping, verbose)[39m
-[32m    362[39m [38;5;28;01mtry[39;00m:
-[32m--> [39m[32m363[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmne[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m create_info, EpochsArray
-[32m    364[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[36mFile [39m[32m~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:417[39m, in [36mSimulator.export_to_eeglab[39m[34m(self, X, mapping, root, fname_template)[39m
+[32m    416[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m417[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01meeglabio[39;00m[34;01m.[39;00m[34;01mepochs[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m export_set
+[32m    418[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
 
-[31mModuleNotFoundError[39m: No module named 'mne'
+[31mModuleNotFoundError[39m: No module named 'eeglabio'
 
 During handling of the above exception, another exception occurred:
 
 [31mImportError[39m                               Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 17[39m
-[32m     14[39m [38;5;28mprint[39m(sims.summary())
-[32m     16[39m [38;5;66;03m# Convert to MNE epochs:[39;00m
-[32m---> [39m[32m17[39m epochs = [43msims[49m[43m.[49m[43mexport_to_mne[49m[43m([49m[43mX[49m[43m=[49m[43mX[49m[43m.[49m[43mcopy[49m[43m([49m[43m)[49m[43m,[49m[43m [49m[43mmapping[49m[43m=[49m[43mmapping[49m[43m)[49m
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 20[39m
+[32m     17[39m epochs = sims.export_to_mne(X=X.copy(), mapping=mapping)
 [32m     19[39m [38;5;66;03m# Alternatively, save to eeglab format[39;00m
-[32m     20[39m sims.export_to_eeglab(
-[32m     21[39m     X=X.copy(),
-[32m     22[39m     mapping=mapping,
-[32m     23[39m     root=[33m"[39m[33m./data[39m[33m"[39m,
-[32m     24[39m     fname_template=[33m"[39m[33msub-[39m[38;5;132;01m{:02d}[39;00m[33m_task-sim-epo.set[39m[33m"[39m,
-[32m     25[39m )
+[32m---> [39m[32m20[39m [43msims[49m[43m.[49m[43mexport_to_eeglab[49m[43m([49m
+[32m     21[39m [43m    [49m[43mX[49m[43m=[49m[43mX[49m[43m.[49m[43mcopy[49m[43m([49m[43m)[49m[43m,[49m
+[32m     22[39m [43m    [49m[43mmapping[49m[43m=[49m[43mmapping[49m[43m,[49m
+[32m     23[39m [43m    [49m[43mroot[49m[43m=[49m[33;43m"[39;49m[33;43m./data[39;49m[33;43m"[39;49m[43m,[49m
+[32m     24[39m [43m    [49m[43mfname_template[49m[43m=[49m[33;43m"[39;49m[33;43msub-[39;49m[38;5;132;43;01m{:02d}[39;49;00m[33;43m_task-sim-epo.set[39;49m[33;43m"[39;49m[43m,[49m
+[32m     25[39m [43m)[49m
 
-[36mFile [39m[32m~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:365[39m, in [36mSimulator.export_to_mne[39m[34m(self, ch_type, X, mapping, verbose)[39m
-[32m    363[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmne[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m create_info, EpochsArray
-[32m    364[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
-[32m--> [39m[32m365[39m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
-[32m    366[39m         [33m"[39m[33mMNE-Python could not be imported. Use the following installation method [39m[33m"[39m
-[32m    367[39m         [33m"[39m[33mappropriate for your environment:[39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[33m"[39m
-[32m    368[39m         [33mf[39m[33m"[39m[33m    pip install mne[39m[38;5;130;01m\n[39;00m[33m"[39m
-[32m    369[39m         [33mf[39m[33m"[39m[33m    conda install -c conda-forge mne[39m[33m"[39m
-[32m    370[39m     )
-[32m    371[39m [38;5;66;03m# Create events:[39;00m
-[32m    372[39m events, event_id = [38;5;28mself[39m.generate_events(X, mapping)
+[36mFile [39m[32m~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:419[39m, in [36mSimulator.export_to_eeglab[39m[34m(self, X, mapping, root, fname_template)[39m
+[32m    417[39m     [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01meeglabio[39;00m[34;01m.[39;00m[34;01mepochs[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m export_set
+[32m    418[39m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[32m--> [39m[32m419[39m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[32m    420[39m         [33m"[39m[33meeglabio could not be imported. Install it with:[39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[33m"[39m
+[32m    421[39m         [33m"[39m[33m    pip install eeglabio[39m[38;5;130;01m\n[39;00m[33m"[39m
+[32m    422[39m         [33m"[39m[33m    conda install -c conda-forge eeglabio[39m[33m"[39m
+[32m    423[39m     )
+[32m    425[39m [38;5;66;03m# Ensure fname_template has a placeholder[39;00m
+[32m    426[39m [38;5;28;01mif[39;00m [33m"[39m[33m{[39m[33m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m fname_template:
+[32m    427[39m     [38;5;66;03m# No placeholder: append a subject number at the end[39;00m
 
-[31mImportError[39m: MNE-Python could not be imported. Use the following installation method appropriate for your environment:
+[31mImportError[39m: eeglabio could not be imported. Install it with:
 
-    pip install mne
-    conda install -c conda-forge mne
+    pip install eeglabio
+    conda install -c conda-forge eeglabio
 

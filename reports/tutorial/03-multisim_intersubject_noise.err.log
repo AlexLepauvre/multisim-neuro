@@ -25,55 +25,90 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-import pandas as pd
-from scipy.stats import gamma as gamma_dist
 import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from mne.decoding import SlidingEstimator, cross_val_multiscore
+from mne.stats import permutation_cluster_1samp_test, bootstrap_confidence_interval
 
-# Creating the design matrix of our 2 by two balanced design:
-X = np.array([[1, 1, -1, -1] * 40, [1, -1] * 80]).T
+# Create the classifier:
+clf = make_pipeline(StandardScaler(), SVC())
 
-# Add descriptors:
-cond_names = ["category", "attention"]
-X = pd.DataFrame(X, columns=cond_names)  # Add a column for the interaction between category and attention
-mapping = {
-    "category": {1: "face", -1: "object"},
-    "attention": {1: "attended", -1: "unattended"},
-}
+# Time resolved
+time_decod = SlidingEstimator(clf, n_jobs=None, scoring="roc_auc", verbose=True)
 
-# Specifying the effects:
-effects = [
-    {"condition": 'category', "windows": [0.1, 0.2], "effect_size": 0.5}, 
-    {"condition": 'attention', "windows": [0.3, 0.4], "effect_size": 0.5}
-    ]  # Packaging them in a list to pass to the simulator class
+# Extract labels:
+cate_lbl = np.array([mapping["category"][val] for val in X.to_numpy()[:, 0]])
+att_lbl = np.array([mapping["attention"][val] for val in X.to_numpy()[:, 1]])
 
-# Data parameters:
-n_channels = 32  # EEG system with 32 electrodes
-n_subjects = 20  # Recording from 20 subjects
-noise_std = 1 / 2  # Variance of the data
-ch_cov = None  # Assuming that the data of each sensor are independent
-sfreq = 50  # Simulating data at 50Hz
-tmin = -0.25
-tmax = 1.0
+scores_category = []
+scores_attention = []
 
-# Generate our kernel:
-t = np.arange(0, 1, 1 / sfreq)  # time vector (in seconds)
-kernel = gamma_dist(a=2, scale=0.08).pdf(t)
-kernel /= kernel.max() * 5  # Normalize peak to 0.25
+# Loop through each subject:
+for epo in epochs:
+    # Extract the data:
+    data = epo.get_data()
+    # Classification of category
+    scores_category.append(
+        np.mean(
+            cross_val_multiscore(
+                time_decod, data, cate_lbl, cv=5, n_jobs=-1, verbose="WARNING"
+            ),
+            axis=0,
+        )
+    )
+    # Classification of attention:
+    scores_attention.append(
+        np.mean(
+            cross_val_multiscore(
+                time_decod, data, att_lbl, cv=5, n_jobs=-1, verbose="WARNING"
+            ),
+            axis=0,
+        )
+    )
 
-# Between subject noise:
-intersub_noise_std = 1 / 8
+scores_category = np.array(scores_category)
+scores_attention = np.array(scores_attention)
+
+# Group level statistics:
+# Cluster based permutation test for the category:
+T_obs, clusters, cluster_p_values, H0 = permutation_cluster_1samp_test(
+    scores_category - 0.5,
+    n_permutations=1024,
+    tail=1,
+    out_type="mask",
+    verbose=True,
+)
+sig_mask_cate = np.zeros(len(epochs[0].times), dtype=bool)
+for c, p_val in enumerate(cluster_p_values):
+    if p_val < 0.05:
+        sig_mask_cate[clusters[c]] = True
+
+# Cluster based permutation test for the attention:
+T_obs, clusters, cluster_p_values, H0 = permutation_cluster_1samp_test(
+    scores_attention - 0.5,
+    n_permutations=1024,
+    tail=1,
+    out_type="mask",
+    verbose=True,
+)
+sig_mask_att = np.zeros(len(epochs[0].times), dtype=bool)
+for c, p_val in enumerate(cluster_p_values):
+    if p_val < 0.05:
+        sig_mask_att[clusters[c]] = True
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 3[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
-[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
-[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mscipy[39;00m[34;01m.[39;00m[34;01mstats[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m gamma [38;5;28;01mas[39;00m gamma_dist
-[32m      4[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
-[32m      6[39m [38;5;66;03m# Creating the design matrix of our 2 by two balanced design:[39;00m
+[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 3[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
+[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
+[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01msvm[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m SVC
+[32m      4[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpipeline[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m make_pipeline
+[32m      5[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpreprocessing[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m StandardScaler
 
-[31mModuleNotFoundError[39m: No module named 'scipy'
+[31mModuleNotFoundError[39m: No module named 'sklearn'
 

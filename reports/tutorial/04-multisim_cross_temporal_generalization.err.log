@@ -90,12 +90,12 @@ epochs = sims.export_to_mne(X=X.copy(), mapping=mapping)
 
 [31m---------------------------------------------------------------------------[39m
 [31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 3[39m
-[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m
-[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m
-[32m----> [39m[32m3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mscipy[39;00m[34;01m.[39;00m[34;01mstats[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m gamma [38;5;28;01mas[39;00m gamma_dist
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 6[39m
 [32m      4[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
 [32m      5[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmultisim[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Simulator
+[32m----> [39m[32m6[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01msvm[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m SVC
+[32m      7[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpipeline[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m make_pipeline
+[32m      8[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpreprocessing[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m StandardScaler
 
-[31mModuleNotFoundError[39m: No module named 'scipy'
+[31mModuleNotFoundError[39m: No module named 'sklearn'
 

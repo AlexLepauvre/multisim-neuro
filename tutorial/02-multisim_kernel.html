@@ -348,20 +348,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">gamma</span> <span class="k">as</span> <span class="n">gamma_dist</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Creating the design matrix of our 2 by two balanced design:</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="specifying-the-temporal-kernel">
@@ -385,7 +371,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6dcb6104ed4333d7b3905526683b2de43c4be84e1dd000bbe45311c17f463f7b.png" src="../_images/6dcb6104ed4333d7b3905526683b2de43c4be84e1dd000bbe45311c17f463f7b.png" />
+<img alt="../_images/cc7eb3a17663658687cc2afc782ee50de1bdb75c1fb8d5e5b818eb43627693e8.png" src="../_images/cc7eb3a17663658687cc2afc782ee50de1bdb75c1fb8d5e5b818eb43627693e8.png" />
 </div>
 </div>
 <p>You can play around with the shape and scale parameters to obtain different temporal profiles. I chose these parameters as I thought they look reasonable. Note that here, despite the kernel starting at t = 0, when we convolve it with the data, it will start to rise only from the first sample at which we have an effect and ramp up from there. So don’t try to specify a kernel that starts at the time point you’d want to see your effect, this is taken care of above by specifying the time window for your effect.</p>
@@ -426,13 +412,21 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-160 matching events found
-No baseline correction applied
-0 projection items activated
-combining channels using &quot;mean&quot;
 </pre></div>
 </div>
-<img alt="../_images/ad71c16f25b0f448975c58c1322597244abc819192f247d9124a384e8aa04c08.png" src="../_images/ad71c16f25b0f448975c58c1322597244abc819192f247d9124a384e8aa04c08.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>160 matching events found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No baseline correction applied
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using &quot;mean&quot;
+</pre></div>
+</div>
+<img alt="../_images/7c4f2907ec9d9a9a21dd8f5013fa3faa6d1b57232d67d3beabcae01f736655c5.png" src="../_images/7c4f2907ec9d9a9a21dd8f5013fa3faa6d1b57232d67d3beabcae01f736655c5.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 640x480 with 3 Axes&gt;]
 </pre></div>
 </div>
@@ -495,10 +489,18 @@ combining channels using &quot;mean&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
 </pre></div>
 </div>
-<img alt="../_images/d758ff5994d208256748d5c1350eef28611bdcab592865f7bdb8412c217aba3f.png" src="../_images/d758ff5994d208256748d5c1350eef28611bdcab592865f7bdb8412c217aba3f.png" />
 </div>
 </div>
 </section>

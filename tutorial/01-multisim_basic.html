@@ -459,44 +459,42 @@ Conditions: 2 (category, attention)
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File ~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:363,</span> in <span class="ni">Simulator.export_to_mne</span><span class="nt">(self, ch_type, X, mapping, verbose)</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">363</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">mne</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_info</span><span class="p">,</span> <span class="n">EpochsArray</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="nn">File ~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:417,</span> in <span class="ni">Simulator.export_to_eeglab</span><span class="nt">(self, X, mapping, root, fname_template)</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">417</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">eeglabio.epochs</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_set</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;mne&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;eeglabio&#39;
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="n">sims</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Convert to MNE epochs:</span>
-<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">epochs</span> <span class="o">=</span> <span class="n">sims</span><span class="o">.</span><span class="n">export_to_mne</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">20</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">epochs</span> <span class="o">=</span> <span class="n">sims</span><span class="o">.</span><span class="n">export_to_mne</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># Alternatively, save to eeglab format</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">sims</span><span class="o">.</span><span class="n">export_to_eeglab</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="n">sims</span><span class="o">.</span><span class="n">export_to_eeglab</span><span class="p">(</span>
 <span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
 <span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">root</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">fname_template</span><span class="o">=</span><span class="s2">&quot;sub-</span><span class="si">{:02d}</span><span class="s2">_task-sim-epo.set&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="p">)</span>
 
-<span class="nn">File ~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:365,</span> in <span class="ni">Simulator.export_to_mne</span><span class="nt">(self, ch_type, X, mapping, verbose)</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">mne</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_info</span><span class="p">,</span> <span class="n">EpochsArray</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">365</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="s2">&quot;MNE-Python could not be imported. Use the following installation method &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span>         <span class="s2">&quot;appropriate for your environment:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>         <span class="sa">f</span><span class="s2">&quot;    pip install mne</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span>         <span class="sa">f</span><span class="s2">&quot;    conda install -c conda-forge mne&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span> <span class="c1"># Create events:</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="n">events</span><span class="p">,</span> <span class="n">event_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_events</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">mapping</span><span class="p">)</span>
+<span class="nn">File ~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:419,</span> in <span class="ni">Simulator.export_to_eeglab</span><span class="nt">(self, X, mapping, root, fname_template)</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">eeglabio.epochs</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_set</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">419</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">420</span>         <span class="s2">&quot;eeglabio could not be imported. Install it with:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>         <span class="s2">&quot;    pip install eeglabio</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="s2">&quot;    conda install -c conda-forge eeglabio&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">423</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="c1"># Ensure fname_template has a placeholder</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">if</span> <span class="s2">&quot;{&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fname_template</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="c1"># No placeholder: append a subject number at the end</span>
 
-<span class="ne">ImportError</span>: MNE-Python could not be imported. Use the following installation method appropriate for your environment:
+<span class="ne">ImportError</span>: eeglabio could not be imported. Install it with:
 
-    <span class="n">pip</span> <span class="n">install</span> <span class="n">mne</span>
-    <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">mne</span>
+    <span class="n">pip</span> <span class="n">install</span> <span class="n">eeglabio</span>
+    <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">eeglabio</span>
 </pre></div>
 </div>
 </div>
