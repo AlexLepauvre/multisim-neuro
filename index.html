@@ -31,6 +31,7 @@
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -266,17 +267,21 @@
                   
   <section id="multisim-a-toolbox-for-simulating-multivariate-eeg-meg-data">
 <h1>MultiSim: A toolbox for simulating multivariate EEG/MEG data<a class="headerlink" href="#multisim-a-toolbox-for-simulating-multivariate-eeg-meg-data" title="Link to this heading">#</a></h1>
+<section id="motivation-and-overview">
+<h2>Motivation and Overview<a class="headerlink" href="#motivation-and-overview" title="Link to this heading">#</a></h2>
+<p>One critical challenge in designing analysis pipelines for MEG/EEG data is confirming that the pipeline is both sensitive (i.e., it detects real effects) and specific (i.e., it avoids false alarms). In most cases, it is not known a priori whether or when experimental effects are present in the data, and it is therefore not possible to assess the sensitivity and specificity of analysis pipelines based on the data one is trying to analyse.</p>
 <p><strong>MultiSim</strong> is a Python package for simulating multivariate EEG/MEG datasets with user-defined experimental effects.
 It enables principled testing and validation of decoding pipelines, source reconstruction methods, and statistical analyses.</p>
+</section>
 <section id="features">
 <h2>Features<a class="headerlink" href="#features" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Simulate multivariate EEG/MEG data with known ground-truth effects</p></li>
-<li><p>Inject effects at specified time windows and across specified conditions</p></li>
-<li><p>Control signal-to-noise ratio, spatial covariance, temporal smoothing, and between-subject variability</p></li>
-<li><p>Generate multiple subjects for group-level statistical analysis</p></li>
-<li><p>Export to <a class="reference external" href="https://mne.tools/">MNE-Python</a> and <a class="reference external" href="https://sccn.ucsd.edu/eeglab/">EEGLAB</a> formats</p></li>
-</ul>
+<p>Specifically, the toolbox allows to:
+- Specify a between-trial design (e.g., two conditions, Condition A and Condition B).
+- Inject multivariate effects at particular time windows (e.g., Condition A is active from 100–200 ms, Condition B from 300–400 ms).
+- Control signal-to-noise ratio, spatial covariance, temporal smoothing, and between-subject variability
+- Generate multiple subjects for group-level statistical analysis
+- Export to <a class="reference external" href="https://mne.tools/">MNE-Python</a> and <a class="reference external" href="https://sccn.ucsd.edu/eeglab/">EEGLAB</a> formats
+- Validate that the pipeline recovers the known effects accurately.</p>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
@@ -396,6 +401,7 @@ SOFTWARE.
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-and-overview">Motivation and Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-example">Usage Example</a></li>

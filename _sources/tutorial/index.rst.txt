@@ -8,8 +8,10 @@ Here you can find tutorials on how to use the meg simulator
 .. toctree::
    :maxdepth: 2
 
-   multisim_basic
-   multisim_kernel
-   multisim_intersubject_noise
-   multisim_effect_size
+   01-multisim_basic
+   02-multisim_kernel
+   03-multisim_intersubject_noise
+   04-multisim_cross_temporal_generalization
+   05-multisim_effect_size
+   06-mathematical_details
 

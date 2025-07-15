@@ -31,6 +31,7 @@
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -48,7 +49,7 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Basic usage" href="multisim_basic.html" />
+    <link rel="next" title="Basic usage" href="01-multisim_basic.html" />
     <link rel="prev" title="Simulator class reference" href="../api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,10 +242,12 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="multisim_basic.html">Basic usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-multisim_basic.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-mathematical_details.html">Generative model</a></li>
 </ul>
 </div>
 </nav></div>
@@ -307,36 +310,47 @@
 <p>Here you can find tutorials on how to use the meg simulator</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="multisim_basic.html">Basic usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#Motivation-and-Overview">Motivation and Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#1.-Defining-an-Experimental-Design">1. Defining an Experimental Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#3.-Specifying-Time-Windows-for-the-Effects">3. Specifying Time Windows for the Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#4.-Simulating-the-Data">4. Simulating the Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#5.-Vizualizing-the-data:">5. Vizualizing the data:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_basic.html#6.-Decoding-analysis">6. Decoding analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-multisim_basic.html">Basic usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-multisim_basic.html#defining-an-experimental-design">1. Defining an Experimental Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-multisim_basic.html#specifying-multivariate-effects-in-the-data">2. Specifying multivariate effects in the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-multisim_basic.html#specifying-the-characteristics-of-the-data">3. Specifying the characteristics of the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-multisim_basic.html#simulating-the-data">4. Simulating the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-multisim_basic.html#vizualizing-the-data">5. Vizualizing the data:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-multisim_basic.html#decoding-analysis">6. Decoding analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#1.-Setting-up-the-simulation">1. Setting up the simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#2.-Specifying-the-temporal-kernel">2. Specifying the temporal kernel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#4.-Simulating-the-data">4. Simulating the data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#5.-Vizualizing-the-data:">5. Vizualizing the data:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_kernel.html#6.-Decoding-analysis">6. Decoding analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-multisim_kernel.html#setting-up-the-simulation">1. Setting up the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-multisim_kernel.html#specifying-the-temporal-kernel">2. Specifying the temporal kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-multisim_kernel.html#simulating-the-data">4. Simulating the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-multisim_kernel.html#vizualizing-the-data">5. Vizualizing the data:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-multisim_kernel.html#decoding-analysis">6. Decoding analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="multisim_intersubject_noise.html#1.-Setting-up-the-simulation">1. Setting up the simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_intersubject_noise.html#2.-Simulating-the-data">2. Simulating the data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_intersubject_noise.html#3.-Decoding-analysis-and-plotting">3. Decoding analysis and plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03-multisim_intersubject_noise.html#setting-up-the-simulation">1. Setting up the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-multisim_intersubject_noise.html#simulating-the-data">2. Simulating the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-multisim_intersubject_noise.html#decoding-analysis-and-plotting">3. Decoding analysis and plotting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="multisim_effect_size.html">Specifying Multivariate Effect Size</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Trials-per-subject">Trials per subject</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Number-of-channels">Number of channels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Effect-size,-subjects-&amp;-trials">Effect size, subjects &amp; trials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Putting-it-all-together">Putting it all together</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Conclusion-and-Practical-Recommendations">Conclusion and Practical Recommendations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multisim_effect_size.html#Mathematical-formulation-of-effect-sizes-(advanced)">Mathematical formulation of effect sizes (advanced)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html#simulating-data-with-cross-temporal-generalization-patterns-for-each-condition">1. Simulating data with cross temporal generalization patterns for each condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html#simulating-data-with-effects-shared-across-time-windows">2. Simulating data with effects shared across time windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html#simulating-data-with-effects-unique-to-each-time-windows">3. Simulating data with effects unique to each time windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html#full-modularity">4. Full modularity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="05-multisim_effect_size.html#trials-per-subject">Trials per subject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-multisim_effect_size.html#number-of-channels">Number of channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-multisim_effect_size.html#effect-size-subjects-trials">Effect size, subjects &amp; trials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-multisim_effect_size.html#putting-it-all-together">Putting it all together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-multisim_effect_size.html#conclusion-and-practical-recommendations">Conclusion and Practical Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="06-mathematical_details.html">Generative model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06-mathematical_details.html#effect-size">Effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-mathematical_details.html#references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -363,7 +377,7 @@
       </div>
     </a>
     <a class="right-next"
-       href="multisim_basic.html"
+       href="01-multisim_basic.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
