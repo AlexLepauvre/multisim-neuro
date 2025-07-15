@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Generative model &#8212; multisim 0.1 documentation</title>
+    <title>Mathematical details &#8212; multisim 0.1 documentation</title>
   
   
   
@@ -246,7 +246,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Generative model</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mathematical details</a></li>
 </ul>
 </div>
 </nav></div>
@@ -290,7 +290,7 @@
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">MultiSim tutorials</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Generative model</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mathematical details</span></li>
   </ul>
 </nav>
 </div>
@@ -307,8 +307,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="generative-model">
-<h1>Generative model<a class="headerlink" href="#generative-model" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mathematical-details">
+<h1>Mathematical details<a class="headerlink" href="#mathematical-details" title="Link to this heading">#</a></h1>
 <p>Time series data with multivariate effects are simulated using a multivariate general linear model (GLM). For each subject <span class="math notranslate nohighlight">\(s\)</span>, the simulated data matrix <span class="math notranslate nohighlight">\(\boldsymbol{Y_s}\in\mathbb{R}^{n_{samples} \times n_{channels}}\)</span> is generated as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -330,7 +330,7 @@
 <p>The <span class="math notranslate nohighlight">\(\mathbf{B}_s\in\mathbb{R}^{(n_{conditions} \times n_t)\times n_{channels}}\)</span>​ stacks, row-wise, the time-resolved regression coefficients (β-weights) for every condition. Each row therefore corresponds to a specific condition–time pair, and each column to a sensor or feature. To embed a multivariate effect at selected time points, we draw a random spatial pattern from a standard normal distribution <span class="math notranslate nohighlight">\(v \sim \mathcal{N}(0, \mathbf{I})\)</span> across channels, and rescale it by a constant <span class="math notranslate nohighlight">\(a\)</span> so that its Mahalanobis length equals the user-requested effect size (see below). Rows of <span class="math notranslate nohighlight">\(\mathbf{B}_s\)</span> that correspond to the chosen condition-times windows are then set to <span class="math notranslate nohighlight">\(av^\top\)</span>.</p>
 <section id="effect-size">
 <h2>Effect size<a class="headerlink" href="#effect-size" title="Link to this heading">#</a></h2>
-<p>Effect sizes are simulated based on the Mahalanobis distance (<span id="id1">[<a class="reference internal" href="04-multisim_cross_temporal_generalization.html#id5" title="Goeffrey J McLachlan. Mahalanobis distance. Resonance, 4(6):20–26, 1999.">McL99</a>]</span>, <span id="id2">[<a class="reference internal" href="04-multisim_cross_temporal_generalization.html#id6" title="Prasanta Chandra Mahalanobis. On tests and measures of group divergence. J. Asiat. Soc. Bengal, 26:541–588, 1930.">Mah30</a>]</span>), which is a multivariate generalization of the standard z-score, taking into account the covariance structure of the data. For two classes, the Mahalanobis distance is defined as:</p>
+<p>Effect sizes are simulated based on the Mahalanobis distance (<span id="id1">[<a class="reference internal" href="#id7" title="Goeffrey J McLachlan. Mahalanobis distance. Resonance, 4(6):20–26, 1999.">1</a>]</span>, <span id="id2">[<a class="reference internal" href="#id8" title="Prasanta Chandra Mahalanobis. On tests and measures of group divergence. J. Asiat. Soc. Bengal, 26:541–588, 1930.">2</a>]</span>), which is a multivariate generalization of the standard z-score, taking into account the covariance structure of the data. For two classes, the Mahalanobis distance is defined as:</p>
 <div class="math notranslate nohighlight">
 \[\Delta =  \sqrt{(\mu_{1} - \mu_{2})^{T}\Sigma^{-1}(\mu_{1} - \mu_{2})}\]</div>
 <ul class="simple">
@@ -376,7 +376,7 @@
 <p>With equal class covariances, a Bayes-optimal linear classifier achieves:</p>
 <div class="math notranslate nohighlight">
 \[\Phi(-\frac{1}{2}d')\]</div>
-<p>Where <span class="math notranslate nohighlight">\(\Phi\)</span> is the normal distribution cummulative distribution function (<span id="id3">[<a class="reference internal" href="04-multisim_cross_temporal_generalization.html#id5" title="Goeffrey J McLachlan. Mahalanobis distance. Resonance, 4(6):20–26, 1999.">McL99</a>]</span>, <span id="id4">[<a class="reference internal" href="04-multisim_cross_temporal_generalization.html#id7" title="Geoffrey J McLachlan. Discriminant analysis and statistical pattern recognition. John Wiley &amp; Sons, 2005.">McL05</a>]</span>). Accordingly, the maximal theoretical decoding accuracy is equal to:</p>
+<p>Where <span class="math notranslate nohighlight">\(\Phi\)</span> is the normal distribution cummulative distribution function (<span id="id3">[<a class="reference internal" href="#id7" title="Goeffrey J McLachlan. Mahalanobis distance. Resonance, 4(6):20–26, 1999.">1</a>]</span>, <span id="id4">[<a class="reference internal" href="#id9" title="Geoffrey J McLachlan. Discriminant analysis and statistical pattern recognition. John Wiley &amp; Sons, 2005.">3</a>]</span>). Accordingly, the maximal theoretical decoding accuracy is equal to:</p>
 <div class="math notranslate nohighlight">
 \[1 - \Phi(-\frac{1}{2}d')\]</div>
 <p>Thus an effect size of <span class="math notranslate nohighlight">\(d'=0.5\)</span> implies a theoretical ceiling of ≈ 69 % accuracy, <span class="math notranslate nohighlight">\(d'=1\)</span> gives ≈ 84 %, and so on.  By scaling the injected pattern according to the formula above, <strong>multisim</strong> ensures that simulated data respect this relationship irrespective of the number of channels or their covariance.</p>
@@ -384,6 +384,23 @@
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id5">
+<div role="list" class="citation-list">
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>Goeffrey J McLachlan. Mahalanobis distance. <em>Resonance</em>, 4(6):20–26, 1999.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Prasanta Chandra Mahalanobis. On tests and measures of group divergence. <em>J. Asiat. Soc. Bengal</em>, 26:541–588, 1930.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Geoffrey J McLachlan. <em>Discriminant analysis and statistical pattern recognition</em>. John Wiley &amp; Sons, 2005.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 

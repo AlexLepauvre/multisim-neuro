@@ -5,7 +5,7 @@
    "id": "5e9cf430",
    "metadata": {},
    "source": [
-    "# Generative model\n",
+    "# Mathematical details\n",
     "Time series data with multivariate effects are simulated using a multivariate general linear model (GLM). For each subject $s$, the simulated data matrix $\\boldsymbol{Y_s}\\in\\mathbb{R}^{n_{samples} \\times n_{channels}}$ is generated as:\n",
     "\n",
     "$$\n",
@@ -94,7 +94,11 @@
     "Thus an effect size of $d'=0.5$ implies a theoretical ceiling of ≈ 69 % accuracy, $d'=1$ gives ≈ 84 %, and so on.  By scaling the injected pattern according to the formula above, **multisim** ensures that simulated data respect this relationship irrespective of the number of channels or their covariance.\n",
     "\n",
     "\n",
-    "## References\n"
+    "## References\n",
+    "```{bibliography}\n",
+    ":style: unsrt\n",
+    ":filter: docname in docnames\n",
+    "```"
    ]
   }
  ],

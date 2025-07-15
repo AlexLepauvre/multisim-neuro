@@ -466,7 +466,10 @@
    "source": [
     "In the next tutorial, we will explore the effect size parameter to show how to use it to investigate the relationship between effect size and decoding accuracy and show the impact of trial number, noise and number of features. \n",
     "\n",
+    "## References\n",
     "```{bibliography}\n",
+    ":style: unsrt\n",
+    ":filter: docname in docnames\n",
     "```"
    ]
   }

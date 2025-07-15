@@ -245,7 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cross temporal generalization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-mathematical_details.html">Generative model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-mathematical_details.html">Mathematical details</a></li>
 </ul>
 </div>
 </nav></div>
@@ -308,7 +308,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cross-temporal-generalization">
 <h1>Cross temporal generalization<a class="headerlink" href="#cross-temporal-generalization" title="Link to this heading">#</a></h1>
-<p>In the previous examples, we simulated multivariate patterns representing specific experimental conditions of interest, within specific time windows and tested the effects in a time resolved fashion. Under the hood, the simulator embedded multivariate patterns that are consistant across the entire specified time windows. What this means is that if you apply a cross temporal generalization technique, as described by <span id="id1">King and Dehaene [<a class="reference internal" href="#id4" title="Jean-Rémi King and Stanislas Dehaene. Characterizing the dynamics of mental representations: the temporal generalization method. Trends in cognitive sciences, 18(4):203–210, 2014.">KD14</a>]</span>, you will observe cross temporal generalization of the decoding across the entire time window. We will show that below. But importantly, the toolbox is fully flexible, and we can simulate all kind of cross temporal generalization patterns.</p>
+<p>In the previous examples, we simulated multivariate patterns representing specific experimental conditions of interest, within specific time windows and tested the effects in a time resolved fashion. Under the hood, the simulator embedded multivariate patterns that are consistant across the entire specified time windows. What this means is that if you apply a cross temporal generalization technique, as described by <span id="id1">King and Dehaene [<a class="reference internal" href="#id4" title="Jean-Rémi King and Stanislas Dehaene. Characterizing the dynamics of mental representations: the temporal generalization method. Trends in cognitive sciences, 18(4):203–210, 2014.">1</a>]</span>, you will observe cross temporal generalization of the decoding across the entire time window. We will show that below. But importantly, the toolbox is fully flexible, and we can simulate all kind of cross temporal generalization patterns.</p>
 <section id="simulating-data-with-cross-temporal-generalization-patterns-for-each-condition">
 <h2>1. Simulating data with cross temporal generalization patterns for each condition<a class="headerlink" href="#simulating-data-with-cross-temporal-generalization-patterns-for-each-condition" title="Link to this heading">#</a></h2>
 <p>We can repeat the same simulation as in all previous examples and apply cross temporal generalization technique to see what that looks like:</p>
@@ -612,7 +612,7 @@
 </section>
 <section id="full-modularity">
 <h2>4. Full modularity<a class="headerlink" href="#full-modularity" title="Link to this heading">#</a></h2>
-<p>With this simple implementation, you can simulate any kind of cross temporal generalization pattern presented in the paper from King et al. (2014) <span id="id2">[<a class="reference internal" href="#id4" title="Jean-Rémi King and Stanislas Dehaene. Characterizing the dynamics of mental representations: the temporal generalization method. Trends in cognitive sciences, 18(4):203–210, 2014.">KD14</a>]</span> quite easily. Below are just a few example, but note that by using kernels in a smart way, you can implement quite literally any pattern</p>
+<p>With this simple implementation, you can simulate any kind of cross temporal generalization pattern presented in the paper from King et al. (2014) <span id="id2">[<a class="reference internal" href="#id4" title="Jean-Rémi King and Stanislas Dehaene. Characterizing the dynamics of mental representations: the temporal generalization method. Trends in cognitive sciences, 18(4):203–210, 2014.">1</a>]</span> quite easily. Below are just a few example, but note that by using kernels in a smart way, you can implement quite literally any pattern</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifying the effects:</span>
@@ -686,24 +686,15 @@
 </div>
 </div>
 <p>In the next tutorial, we will explore the effect size parameter to show how to use it to investigate the relationship between effect size and decoding accuracy and show the impact of trial number, noise and number of features.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id3">
 <div role="list" class="citation-list">
 <div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>KD14<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
 <p>Jean-Rémi King and Stanislas Dehaene. Characterizing the dynamics of mental representations: the temporal generalization method. <em>Trends in cognitive sciences</em>, 18(4):203–210, 2014.</p>
-</div>
-<div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>Mah30<span class="fn-bracket">]</span></span>
-<p>Prasanta Chandra Mahalanobis. On tests and measures of group divergence. <em>J. Asiat. Soc. Bengal</em>, 26:541–588, 1930.</p>
-</div>
-<div class="citation" id="id7" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>McL05<span class="fn-bracket">]</span></span>
-<p>Geoffrey J McLachlan. <em>Discriminant analysis and statistical pattern recognition</em>. John Wiley &amp; Sons, 2005.</p>
-</div>
-<div class="citation" id="id5" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>McL99<span class="fn-bracket">]</span></span>
-<p>Goeffrey J McLachlan. Mahalanobis distance. <em>Resonance</em>, 4(6):20–26, 1999.</p>
 </div>
 </div>
 </div>
@@ -761,6 +752,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-data-with-effects-shared-across-time-windows">2. Simulating data with effects shared across time windows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-data-with-effects-unique-to-each-time-windows">3. Simulating data with effects unique to each time windows</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-modularity">4. Full modularity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
