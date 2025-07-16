@@ -19,61 +19,20 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-# Simulation parameters
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from multisim import Simulator
-import matplotlib.pyplot as plt
-from sklearn.svm import SVC
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from mne.decoding import SlidingEstimator, cross_val_multiscore
-from scipy.ndimage import gaussian_filter1d
-from mne.stats import permutation_cluster_1samp_test, bootstrap_confidence_interval
-from scipy.stats import ttest_1samp
-
-# Add descriptors:
-cond_names = ["category", "attention"]
-mapping = {
-    "category": {1: "face", -1: "object"},
-    "attention": {1: "attended", -1: "unattended"},
-}
-
-n_channels = 32  # EEG system with 32 electrodes
-n_subjects = 20  # Recording from 20 subjects
-noise_std = 1 / 8  # Variance of the data
-ch_cov = None  # Assuming that the data of each sensor are independent
-sfreq = 50  # Simulating data at 50Hz
-tmin = -0.25
-tmax = 1.0
-t = np.arange(0, 1, 1 / sfreq)  # time vector (in seconds)
-kernel = None
-intersub_noise_std = 0
-
-# Specifying the effects:
-effects = [
-    {"condition": 'category', "windows": [0.1, 0.2], "effect_size": 0.5}, 
-    {"condition": 'attention', "windows": [0.3, 0.4], "effect_size": 0.5}
-    ]  # Packaging them in a list to pass to the simulator class
-
-------------------
-
-
-[31m---------------------------------------------------------------------------[39m
-[31mModuleNotFoundError[39m                       Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 7[39m
-[32m      5[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mmultisim[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Simulator
-[32m      6[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
-[32m----> [39m[32m7[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01msvm[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m SVC
-[32m      8[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpipeline[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m make_pipeline
-[32m      9[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpreprocessing[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m StandardScaler
-
-[31mModuleNotFoundError[39m: No module named 'sklearn'
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/nbclient/client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['n_trials = [20, 40, 80, 120, 140, 160, 180, 200]', 'n_subjects = [5, 10, 15, 20, 25, 30, 35, 40]', '', '# Specifying the effects:', 'effects = [']
+...
+[')', 'cb = plt.colorbar(im, label="t-stat")', 'ax.set_title("Statistical difference at effect size of 0.2")', 'ax.set_xlabel("Number of trials")', 'ax.set_ylabel("Number of subjects")']
+-------------------
 

@@ -453,50 +453,6 @@ Channels  : 32
 Conditions: 2 (category, attention)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/meeg_simulator/meeg_simulator/multisim/simulator.py:73: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  d&#39; = \\frac{a}{\sigma}
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">File ~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:417,</span> in <span class="ni">Simulator.export_to_eeglab</span><span class="nt">(self, X, mapping, root, fname_template)</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">417</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">eeglabio.epochs</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_set</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;eeglabio&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">20</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">epochs</span> <span class="o">=</span> <span class="n">sims</span><span class="o">.</span><span class="n">export_to_mne</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># Alternatively, save to eeglab format</span>
-<span class="ne">---&gt; </span><span class="mi">20</span> <span class="n">sims</span><span class="o">.</span><span class="n">export_to_eeglab</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">root</span><span class="o">=</span><span class="s2">&quot;./data&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">fname_template</span><span class="o">=</span><span class="s2">&quot;sub-</span><span class="si">{:02d}</span><span class="s2">_task-sim-epo.set&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="p">)</span>
-
-<span class="nn">File ~/work/meeg_simulator/meeg_simulator/multisim/simulator.py:419,</span> in <span class="ni">Simulator.export_to_eeglab</span><span class="nt">(self, X, mapping, root, fname_template)</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">eeglabio.epochs</span><span class="w"> </span><span class="kn">import</span> <span class="n">export_set</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">419</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">420</span>         <span class="s2">&quot;eeglabio could not be imported. Install it with:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>         <span class="s2">&quot;    pip install eeglabio</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="s2">&quot;    conda install -c conda-forge eeglabio&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">423</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="c1"># Ensure fname_template has a placeholder</span>
-<span class="g g-Whitespace">    </span><span class="mi">426</span> <span class="k">if</span> <span class="s2">&quot;{&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fname_template</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">427</span>     <span class="c1"># No placeholder: append a subject number at the end</span>
-
-<span class="ne">ImportError</span>: eeglabio could not be imported. Install it with:
-
-    <span class="n">pip</span> <span class="n">install</span> <span class="n">eeglabio</span>
-    <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">eeglabio</span>
-</pre></div>
-</div>
 </div>
 </div>
 </section>
@@ -505,30 +461,28 @@ Conditions: 2 (category, attention)
 <p>We can have a quick look at our simulated data. It won’t look like much, given that we have simulated multivariate effects without much else at all. It won’t look like actual MEG/EEG data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">combine</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="n">scalings</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">scalings</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">eeg</span><span class="o">=</span><span class="mi">1</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-160 matching events found
-No baseline correction applied
-0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\alexander.lepauvre\AppData\Local\Temp\ipykernel_2964\482823938.py:1: RuntimeWarning: Only one channel in group &quot;CH000&quot;; cannot combine by method &quot;mean&quot;.
-  epochs[0].plot_image(picks=[0], combine=&quot;mean&quot;, scalings=dict(eeg=1))
-C:\Users\alexander.lepauvre\AppData\Local\Temp\ipykernel_2964\482823938.py:1: RuntimeWarning: Only 1 channel in &quot;picks&quot;; cannot combine by method &quot;mean&quot;.
-  epochs[0].plot_image(picks=[0], combine=&quot;mean&quot;, scalings=dict(eeg=1))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>160 matching events found
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using &quot;mean&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No baseline correction applied
 </pre></div>
 </div>
-<img alt="../_images/6faa5a48ef8ef16b2b7e8be6c82a7f94ecadc8d533419612c29b10da6e597fe4.png" src="../_images/6faa5a48ef8ef16b2b7e8be6c82a7f94ecadc8d533419612c29b10da6e597fe4.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 640x480 with 3 Axes&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2896/238737532.py:1: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+  epochs[0].plot_image(picks=[0], scalings=dict(eeg=1));
+</pre></div>
+</div>
+<img alt="../_images/50d39dbc69b4742b3ee3d752be875c60521398f4cf8881d9b86c8fa1f30da127.png" src="../_images/50d39dbc69b4742b3ee3d752be875c60521398f4cf8881d9b86c8fa1f30da127.png" />
 </div>
 </div>
 </section>
@@ -592,7 +546,7 @@ C:\Users\alexander.lepauvre\AppData\Local\Temp\ipykernel_2964\482823938.py:1: Ru
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/cada8cd69163596cff1b86f42f2c714f1cde615e8148e14d13e4dae41a9067d5.png" src="../_images/cada8cd69163596cff1b86f42f2c714f1cde615e8148e14d13e4dae41a9067d5.png" />
+<img alt="../_images/be12803b7ab210069cdec96c3e57b3d4763e510005f450a53f64f3fe10316b68.png" src="../_images/be12803b7ab210069cdec96c3e57b3d4763e510005f450a53f64f3fe10316b68.png" />
 </div>
 </div>
 </section>
@@ -668,18 +622,82 @@ C:\Users\alexander.lepauvre\AppData\Local\Temp\ipykernel_2964\482823938.py:1: Ru
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
-stat_fun(H1): min=-2.063440557640801 max=13.915856477893735
-Running initial clustering …
-Found 3 clusters
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4e1b43101e3b44cf8e72c22d04e3ba4e", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
-stat_fun(H1): min=-3.190603052904803 max=11.712562295393171
-Running initial clustering …
-Found 4 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.535363490830331 max=17.191812700033797
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f9c337405fc6442fac24147c93372298", "version_major": 2, "version_minor": 0}</script></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 cluster
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting : 0/1023 [00:00&lt;?,       ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | Permuting : 182/1023 [00:00&lt;00:00, 5346.36it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | Permuting : 380/1023 [00:00&lt;00:00, 5328.94it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▌    | Permuting : 573/1023 [00:00&lt;00:00, 5420.89it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▌  | Permuting : 769/1023 [00:00&lt;00:00, 5469.42it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▎| Permuting : 959/1023 [00:00&lt;00:00, 5452.05it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5357.19it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.0071405912137843 max=22.360549899585912
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 5 clusters
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting : 0/1023 [00:00&lt;?,       ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | Permuting : 194/1023 [00:00&lt;00:00, 5677.19it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 389/1023 [00:00&lt;00:00, 5665.99it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | Permuting : 583/1023 [00:00&lt;00:00, 5644.16it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▌  | Permuting : 777/1023 [00:00&lt;00:00, 5645.18it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▌| Permuting : 972/1023 [00:00&lt;00:00, 5611.51it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5453.82it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </div>
 <p>Based on the input to the simulation, we would expect to see a significantly above chance decoding of face vs. object from 0.1 to 0.2 s, and then of attention from 0.3 to 0.4s. Let’s check whether that is the case:</p>
 <div class="cell docutils container">
@@ -720,7 +738,7 @@ Found 4 clusters
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e3d3a792801470046f95e030ec49eacd2da5f7608110b32ce078f2227ea34bd2.png" src="../_images/e3d3a792801470046f95e030ec49eacd2da5f7608110b32ce078f2227ea34bd2.png" />
+<img alt="../_images/b3e1a88121f189edca29cb6e6352990ca23124e8bb9bc7f468e44bf0639f5e6d.png" src="../_images/b3e1a88121f189edca29cb6e6352990ca23124e8bb9bc7f468e44bf0639f5e6d.png" />
 </div>
 </div>
 <p>Just as one would expect, we find significant decoding in the expected time windows. This makes designing decoding analysis (or any multivariate techniques such as RSA) very easy, as one can be sure that mistakes crept in, and that the pipeline is sensitive and specific enough</p>

@@ -177,7 +177,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
@@ -229,7 +229,7 @@
     }
    ],
    "source": [
-    "epochs[0].plot_image(picks=[0], combine=\"mean\", scalings=dict(eeg=1))"
+    "epochs[0].plot_image(picks=[0], scalings=dict(eeg=1));"
    ]
   },
   {
