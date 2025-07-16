@@ -311,6 +311,29 @@ experimental manipulation can switch on/off within an epoch.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>pandas.DataFrame</em><em>, </em><em>shape</em><em> (</em><em>n_epochs</em><em>, </em><em>n_conditions</em><em>)</em>) – Trial-by-trial design matrix. <strong>Must have named columns</strong>.</p></li>
 <li><p><strong>effects</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a><em>]</em>) – <p>Each dict describes <strong>one multivariate pattern</strong>.  Required keys</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">condition</span></code></p></td>
+<td><p>Column name in <em>X</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">windows</span></code></p></td>
+<td><p>List of <code class="docutils literal notranslate"><span class="pre">(start,</span> <span class="pre">end)</span></code> time pairs (seconds).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">effect_size</span></code></p></td>
+<td><p>Mahalanobis distance (<em>d′</em>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">effect_amp</span></code></p></td>
+<td><p>Amplitude of β-weights directly.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Specify either effect_size or effect_amp, not both.</p>
 <p><em>One dict → one pattern.</em>  To share a pattern across several windows,
 list them in a single dict.  To have different patterns, provide
 multiple dicts with the same <code class="docutils literal notranslate"><span class="pre">condition</span></code>.</p>
