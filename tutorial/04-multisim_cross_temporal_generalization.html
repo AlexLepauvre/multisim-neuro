@@ -337,8 +337,8 @@
 
 <span class="c1"># Specifying the effects:</span>
 <span class="n">effects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
     <span class="p">]</span>  <span class="c1"># Packaging them in a list to pass to the simulator class</span>
 
 <span class="c1"># Data parameters:</span>
@@ -352,9 +352,8 @@
 
 <span class="c1"># Generate our kernel:</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">sfreq</span><span class="p">)</span>  <span class="c1"># time vector (in seconds)</span>
-<span class="n">kernel</span> <span class="o">=</span> <span class="n">gamma_dist</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="n">t</span><span class="o">&lt;</span><span class="mf">0.2</span><span class="p">]</span>
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">gamma_dist</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="n">t</span><span class="o">&lt;</span><span class="mf">0.2</span><span class="p">]</span>
 <span class="n">kernel</span> <span class="o">/=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span>  <span class="c1"># Normalize peak to 0.25</span>
-
 
 <span class="c1"># Between subject noise:</span>
 <span class="n">intersub_noise_std</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">8</span>
@@ -509,7 +508,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe83583c2d874c9c3594fd509dd56a1bb820f72cb360843fb71cdfe5747f78df.png" src="../_images/fe83583c2d874c9c3594fd509dd56a1bb820f72cb360843fb71cdfe5747f78df.png" />
+<img alt="../_images/02f311be8a0b8bd42e33bdaddf8b614513e28510289db43eebcae7c55890464f.png" src="../_images/02f311be8a0b8bd42e33bdaddf8b614513e28510289db43eebcae7c55890464f.png" />
 </div>
 </div>
 <p>As we can clearly see, we have decoding that generalize across all time points within the specified window.</p>
@@ -521,8 +520,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifying the effects:</span>
 <span class="n">effects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
     <span class="p">]</span>  <span class="c1"># Packaging them in a list to pass to the simulator class</span>
 
 <span class="c1"># Simulating the data:</span>
@@ -593,7 +592,78 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e287c48509e4c6e6ea088b493ce414ce410fcb8b7f6a24ca2c0e9a2506dc62fa.png" src="../_images/e287c48509e4c6e6ea088b493ce414ce410fcb8b7f6a24ca2c0e9a2506dc62fa.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">19</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">epo</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="c1"># Classification of category</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">scores_category</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>             <span class="n">cross_val_multiscore</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>                 <span class="n">time_decod</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">cate_lbl</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="s2">&quot;WARNING&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">scores_category</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores_category</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># Plot the results</span>
+
+<span class="nn">File &lt;decorator-gen-6&gt;:10,</span> in <span class="ni">cross_val_multiscore</span><span class="nt">(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch)</span>
+
+<span class="nn">File c:\Users\alexander.lepauvre\Documents\GitHub\meeg_simulator\.venv\Lib\site-packages\mne\decoding\base.py:408,</span> in <span class="ni">cross_val_multiscore</span><span class="nt">(estimator, X, y, groups, scoring, cv, n_jobs, verbose, fit_params, pre_dispatch)</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span> <span class="n">parallel</span><span class="p">,</span> <span class="n">p_func</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="n">parallel_func</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="n">_fit_and_score</span><span class="p">,</span> <span class="n">n_jobs</span><span class="p">,</span> <span class="n">pre_dispatch</span><span class="o">=</span><span class="n">pre_dispatch</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="n">position</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;position&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">408</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>     <span class="n">p_func</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>         <span class="n">estimator</span><span class="o">=</span><span class="n">clone</span><span class="p">(</span><span class="n">estimator</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span>         <span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span>         <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span>         <span class="n">scorer</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span>         <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span>         <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span>         <span class="n">fit_params</span><span class="o">=</span><span class="n">fit_params</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span>         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">parameters</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">ii</span> <span class="o">%</span> <span class="n">n_jobs</span><span class="p">)</span> <span class="k">if</span> <span class="n">position</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span>     <span class="p">)</span>
+<span class="nn">    420     for ii, (train, test)</span> in <span class="ni">enumerate</span><span class="nt">(cv_iter)</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+
+<span class="nn">File c:\Users\alexander.lepauvre\Documents\GitHub\meeg_simulator\.venv\Lib\site-packages\joblib\parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">2003</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">2004</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="nn">File c:\Users\alexander.lepauvre\Documents\GitHub\meeg_simulator\.venv\Lib\site-packages\joblib\parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1656</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File c:\Users\alexander.lepauvre\Documents\GitHub\meeg_simulator\.venv\Lib\site-packages\joblib\parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
+<span class="g g-Whitespace">   </span><span class="mi">1758</span> <span class="c1"># async callbacks to progress.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1766</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span> <span class="c1"># default hence the use of the lock</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>This is the kind of effect you would expect if there is a reinstantiation of the same activation pattern encoding specific information at two different time points, such as when you have memory reinstantiation after a delay period or something like that.</p>
@@ -605,8 +675,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifying the effects:</span>
 <span class="n">effects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
     <span class="p">]</span>  <span class="c1"># Packaging them in a list to pass to the simulator class</span>
 
 <span class="c1"># Simulating the data:</span>
@@ -681,7 +751,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specifying the effects:</span>
 <span class="n">effects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
     <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
     <span class="p">]</span>  <span class="c1"># Packaging them in a list to pass to the simulator class</span>
 
