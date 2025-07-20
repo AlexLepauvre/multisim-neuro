@@ -245,7 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06-mathematical_details.html">Mathematical details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-mathematical_details.html">Mathematical details</a></li>
 </ul>
 </div>
 </nav></div>
@@ -390,7 +390,7 @@
 </section>
 <section id="specifying-the-characteristics-of-the-data">
 <h2>3. Specifying the characteristics of the data<a class="headerlink" href="#specifying-the-characteristics-of-the-data" title="Link to this heading">#</a></h2>
-<p>NExt, we need to specify the characteristics of the data:</p>
+<p>Next, we need to specify the characteristics of the data:</p>
 <ul class="simple">
 <li><p>n_channels: the number of channels of the MEG/EEG recordings we plan to analyze</p></li>
 <li><p>sfreq: the sampling frequency of our signal</p></li>
@@ -478,11 +478,11 @@ Conditions: 2 (category, attention)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2890/238737532.py:1: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2947/238737532.py:1: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[0].plot_image(picks=[0], scalings=dict(eeg=1));
 </pre></div>
 </div>
-<img alt="../_images/ff45a2fa55e4d60db7e8669de51b8bedb2344445625bc3769e73f5c2bff08bda.png" src="../_images/ff45a2fa55e4d60db7e8669de51b8bedb2344445625bc3769e73f5c2bff08bda.png" />
+<img alt="../_images/434d8cc15efbcd054d10f3373a98078f723895c1b2176620cbd56b4a98d9e136.png" src="../_images/434d8cc15efbcd054d10f3373a98078f723895c1b2176620cbd56b4a98d9e136.png" />
 </div>
 </div>
 </section>
@@ -546,7 +546,7 @@ Conditions: 2 (category, attention)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/8b215e36132401b498ea79a390bf96a261d9c9116e58096461342637330c6b27.png" src="../_images/8b215e36132401b498ea79a390bf96a261d9c9116e58096461342637330c6b27.png" />
+<img alt="../_images/56a10385e0d7ca1613c2d4c24c038d5290444cc07bf0854ec4613bfcd9a97acc.png" src="../_images/56a10385e0d7ca1613c2d4c24c038d5290444cc07bf0854ec4613bfcd9a97acc.png" />
 </div>
 </div>
 </section>
@@ -624,7 +624,7 @@ Conditions: 2 (category, attention)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-3.6822354058295104 max=13.696800752505967
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-3.239719237503124 max=14.6901366471448
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
@@ -640,22 +640,22 @@ Conditions: 2 (category, attention)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting : 0/1023 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | Permuting : 184/1023 [00:00&lt;00:00, 5395.02it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▊        | Permuting : 190/1023 [00:00&lt;00:00, 5557.00it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | Permuting : 378/1023 [00:00&lt;00:00, 5401.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 387/1023 [00:00&lt;00:00, 5508.94it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|█████▌    | Permuting : 567/1023 [00:00&lt;00:00, 5425.30it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▋    | Permuting : 577/1023 [00:00&lt;00:00, 5490.56it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|███████▍  | Permuting : 756/1023 [00:00&lt;00:00, 5441.93it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▋  | Permuting : 781/1023 [00:00&lt;00:00, 5494.69it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| Permuting : 952/1023 [00:00&lt;00:00, 5435.73it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| Permuting : 980/1023 [00:00&lt;00:00, 5518.63it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5431.57it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5485.69it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -664,34 +664,34 @@ Conditions: 2 (category, attention)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.2490219135392078 max=14.871942760218458
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.4883720930232553 max=15.40163927250385
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 6 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 2 clusters
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting : 0/1023 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▊        | Permuting : 191/1023 [00:00&lt;00:00, 5566.76it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | Permuting : 193/1023 [00:00&lt;00:00, 5652.19it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 384/1023 [00:00&lt;00:00, 5543.45it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 384/1023 [00:00&lt;00:00, 5580.17it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | Permuting : 580/1023 [00:00&lt;00:00, 5539.15it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | Permuting : 578/1023 [00:00&lt;00:00, 5555.80it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▌  | Permuting : 771/1023 [00:00&lt;00:00, 5545.74it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▌  | Permuting : 778/1023 [00:00&lt;00:00, 5528.11it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▍| Permuting : 967/1023 [00:00&lt;00:00, 5538.20it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▍| Permuting : 969/1023 [00:00&lt;00:00, 5520.17it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5503.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5489.58it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -738,7 +738,7 @@ Conditions: 2 (category, attention)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d8b3cdd5305738f79ff89bc4875d0d258009bb174e5e216096d2e60631ea4e2d.png" src="../_images/d8b3cdd5305738f79ff89bc4875d0d258009bb174e5e216096d2e60631ea4e2d.png" />
+<img alt="../_images/1aaea6ca76c67bf281933e6b84770721d38392b52d8abd87e6dc49178ac0a71d.png" src="../_images/1aaea6ca76c67bf281933e6b84770721d38392b52d8abd87e6dc49178ac0a71d.png" />
 </div>
 </div>
 <p>Just as one would expect, we find significant decoding in the expected time windows. This makes designing decoding analysis (or any multivariate techniques such as RSA) very easy, as one can be sure that mistakes crept in, and that the pipeline is sensitive and specific enough</p>
