@@ -130,7 +130,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
@@ -159,7 +159,7 @@
     "    sfreq,  # Sampling frequency of the data\n",
     "    ch_cov=ch_cov,  # Spatial covariance of the data\n",
     ")\n",
-    "print(sims.summary())\n",
+    "print(sims)\n",
     "\n",
     "# Convert to MNE epochs:\n",
     "epochs = sims.export_to_mne(X=X.copy(), mapping=mapping)\n",
