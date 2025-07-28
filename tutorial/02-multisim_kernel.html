@@ -245,6 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-under_the_hood.html">Under the hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07-mathematical_details.html">Mathematical details</a></li>
 </ul>
 </div>
@@ -423,11 +424,11 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3144/238737532.py:1: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3193/238737532.py:1: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[0].plot_image(picks=[0], scalings=dict(eeg=1));
 </pre></div>
 </div>
-<img alt="../_images/18dff27d54310379ffc6c86be29585b1f5a84fe5a1b256880c47a6ffc24346a8.png" src="../_images/18dff27d54310379ffc6c86be29585b1f5a84fe5a1b256880c47a6ffc24346a8.png" />
+<img alt="../_images/7402dca6f4d229fed7f0c8d21f66e33ff7ce74bedb0de78126d224559d342b58.png" src="../_images/7402dca6f4d229fed7f0c8d21f66e33ff7ce74bedb0de78126d224559d342b58.png" />
 </div>
 </div>
 </section>
@@ -490,7 +491,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/cf1758a12f819f99e22f37528ec0e958bcc74600311dbf4140eb8697f42e89be.png" src="../_images/cf1758a12f819f99e22f37528ec0e958bcc74600311dbf4140eb8697f42e89be.png" />
+<img alt="../_images/9d14bc2f5bda82c8750800153d4849617ba469f8b51a15055085853f054a2a39.png" src="../_images/9d14bc2f5bda82c8750800153d4849617ba469f8b51a15055085853f054a2a39.png" />
 </div>
 </div>
 </section>
@@ -568,13 +569,13 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.3473182136020925 max=22.143473363304338
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-3.006982396832503 max=16.94136594994832
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 5 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 3 clusters
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
@@ -584,22 +585,22 @@
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting : 0/1023 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | Permuting : 192/1023 [00:00&lt;00:00, 5622.35it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | Permuting : 189/1023 [00:00&lt;00:00, 5543.75it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 386/1023 [00:00&lt;00:00, 5531.44it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 387/1023 [00:00&lt;00:00, 5649.83it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | Permuting : 579/1023 [00:00&lt;00:00, 5573.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | Permuting : 581/1023 [00:00&lt;00:00, 5638.00it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▌  | Permuting : 776/1023 [00:00&lt;00:00, 5578.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████▌  | Permuting : 779/1023 [00:00&lt;00:00, 5564.09it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|█████████▍| Permuting : 968/1023 [00:00&lt;00:00, 5568.94it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| Permuting : 984/1023 [00:00&lt;00:00, 5494.36it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5519.67it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5430.81it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -608,34 +609,34 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.729133
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.6330642114327407 max=14.154910567694431
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.1456490510934834 max=11.64313541122204
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 4 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 5 clusters
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting : 0/1023 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█▉        | Permuting : 193/1023 [00:00&lt;00:00, 5653.14it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█▊        | Permuting : 189/1023 [00:00&lt;00:00, 5553.89it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███▊      | Permuting : 388/1023 [00:00&lt;00:00, 5656.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | Permuting : 378/1023 [00:00&lt;00:00, 5515.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████▊    | Permuting : 589/1023 [00:00&lt;00:00, 5616.73it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▌    | Permuting : 571/1023 [00:00&lt;00:00, 5553.82it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | Permuting : 786/1023 [00:00&lt;00:00, 5611.98it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▍  | Permuting : 766/1023 [00:00&lt;00:00, 5540.72it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| Permuting : 978/1023 [00:00&lt;00:00, 5613.53it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▎| Permuting : 959/1023 [00:00&lt;00:00, 5536.96it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5555.49it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting : 1023/1023 [00:00&lt;00:00, 5501.52it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -681,7 +682,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b9e484e7caaecd2fe452a7a1865e1a0d86f475d43acb303f58244018dfbd8500.png" src="../_images/b9e484e7caaecd2fe452a7a1865e1a0d86f475d43acb303f58244018dfbd8500.png" />
+<img alt="../_images/0a534e41f23994c083ee3fbb37a60e2815436d921e59d96238490d369c0a0e12.png" src="../_images/0a534e41f23994c083ee3fbb37a60e2815436d921e59d96238490d369c0a0e12.png" />
 </div>
 </div>
 <p>These results align with what we would expect. However, you probably noticed that this time, the effect don’t seem to be restricted to the time points we have specified. That’s to be expected. The gamma kernel are convolved with the time windows of our effects, so the effects gets protruded in time. If you want to avoid this, you should specify your effect as a single point in time (one sample) which when convolved with a temporally extended kernel will become protruded in time. You can then play around with the spread of your kernel to control the duration of the effect. So when using a kernel, it is a bit less straight forward to specify clear time points for your effects.</p>

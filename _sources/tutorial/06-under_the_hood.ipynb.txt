@@ -423,7 +423,7 @@
    "source": [
     "The results show that some channels exhibit positive amplitudes for `face` trials, while others show negative amplitudes. Conversely, the opposite amplitudes are consistently observed for `object` trials. Notably, the amplitude at each channel is much smaller than the effect amplitude specified, as the effect is distributed across multiple channels.\n",
     "\n",
-    "As shown in these examples, the simulator injects a signal of a particular amplitude for each condition and channel at the specified time points. The amplitude in each channel and condition is chosen at random, but remains the same across all trials of each condition, thereby yielding a robust across-channels pattern that classifiers can detect. In the [next tutorial](06-mathematical_details.ipynb), we provide the full mathematical details of how the simulation works."
+    "As shown in these examples, the simulator injects a signal of a particular amplitude for each condition and channel at the specified time points. The amplitude in each channel and condition is chosen at random, but remains the same across all trials of each condition, thereby yielding a robust across-channels pattern that classifiers can detect. In the [next tutorial](07-mathematical_details.ipynb), we provide the full mathematical details of how the simulation works."
    ]
   }
  ],

@@ -49,7 +49,7 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mathematical details" href="07-mathematical_details.html" />
+    <link rel="next" title="Under the hood" href="06-under_the_hood.html" />
     <link rel="prev" title="Cross temporal generalization" href="04-multisim_cross_temporal_generalization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -247,6 +247,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-under_the_hood.html">Under the hood</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07-mathematical_details.html">Mathematical details</a></li>
 </ul>
 </div>
@@ -437,7 +438,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/daa928f00feb49e3233f06fbb685fb23e11d2a485b6ded86158dd11e4707d4eb.png" src="../_images/daa928f00feb49e3233f06fbb685fb23e11d2a485b6ded86158dd11e4707d4eb.png" />
+<img alt="../_images/7fb3599120468d143eb4010cd9feb8f191fb9e389b5c4d1bce79960c9248d28e.png" src="../_images/7fb3599120468d143eb4010cd9feb8f191fb9e389b5c4d1bce79960c9248d28e.png" />
 </div>
 </div>
 <p>As we can see, increasing the number of trials only helps until a certain point. There is not so big of a difference between 160 and 320 trials.</p>
@@ -504,7 +505,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/2e17c44ccc306e1c7c1afd60b21306062bd63ed9e8d7350534f95d2a4fbc95c4.png" src="../_images/2e17c44ccc306e1c7c1afd60b21306062bd63ed9e8d7350534f95d2a4fbc95c4.png" />
+<img alt="../_images/9ff0916f570ad02caf5160e3b4d4cdc853c77f8b4a743121edfee36a5a2bb0f0.png" src="../_images/9ff0916f570ad02caf5160e3b4d4cdc853c77f8b4a743121edfee36a5a2bb0f0.png" />
 </div>
 </div>
 </section>
@@ -577,7 +578,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/c0c5eb4f5c5481db36be01c7dc15f10b2747c4ca3fe18fcf79df4dedf8934af2.png" src="../_images/c0c5eb4f5c5481db36be01c7dc15f10b2747c4ca3fe18fcf79df4dedf8934af2.png" />
+<img alt="../_images/b26e1da1fc3b0c9855f367347c508a0c829f7725056face1581a1e78b60b116f.png" src="../_images/b26e1da1fc3b0c9855f367347c508a0c829f7725056face1581a1e78b60b116f.png" />
 </div>
 </div>
 <p>Surprisingly, the decoding accuracy decreases with increased number of channels, which shouldn’t happen based on our normalization. However, this behavior is expected. When we increase the number of features, we need to decrease the magnitude of the activation in each channel that are part of the pattern to yield a similar theoretical effect size. If we kept the magnitude the same, we would increase the effect size when increasing the number of channels. However, by decreasing the magnitude in each channel, we make it harder to discriminate from the noise of the signal, explaining the decrease in decoding accuracy.</p>
@@ -686,13 +687,13 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.894579
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-1.6085699971976084 max=3.7393693147664213
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.3449362737366575 max=3.3740204343627154
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 4 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 6 clusters
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
@@ -702,16 +703,19 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting (exact test) : 0/255 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████  | Permuting (exact test) : 206/255 [00:00&lt;00:00, 5812.61it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▌  | Permuting (exact test) : 192/255 [00:00&lt;00:00, 5529.74it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5572.36it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5061.75it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 4710.58it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="../_images/9bb4f4bacff34a4102c468f0de31834a477a7a154219db2b692c2354c3ce2d0e.png" src="../_images/9bb4f4bacff34a4102c468f0de31834a477a7a154219db2b692c2354c3ce2d0e.png" />
+<img alt="../_images/30576551222727c67e1d9e3bb482c082ddfb75c68da08298b675cd92854efee8.png" src="../_images/30576551222727c67e1d9e3bb482c082ddfb75c68da08298b675cd92854efee8.png" />
 </div>
 </div>
 <p>Crucially, you should decide on the number of trials per subject to make sure you approach the ceiling decoding accuracy based on your effect size, and you should select the number of subjects to be able to detect an effect of that magnitude in your sample.</p>
@@ -792,7 +796,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of subjects&#39;)
 </pre></div>
 </div>
-<img alt="../_images/2ff5aa931099d6c710e9971374987df962457ec853ef6669af172fcec6316bc6.png" src="../_images/2ff5aa931099d6c710e9971374987df962457ec853ef6669af172fcec6316bc6.png" />
+<img alt="../_images/34dace452a904297f331b203855c534bf7563a0282b8a453d9725df450acb2d9.png" src="../_images/34dace452a904297f331b203855c534bf7563a0282b8a453d9725df450acb2d9.png" />
 </div>
 </div>
 </section>
@@ -831,11 +835,11 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
       </div>
     </a>
     <a class="right-next"
-       href="07-mathematical_details.html"
+       href="06-under_the_hood.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mathematical details</p>
+        <p class="prev-next-title">Under the hood</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

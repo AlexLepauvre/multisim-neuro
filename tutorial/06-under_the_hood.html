@@ -43,10 +43,12 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/06_under_the_hood';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/06-under_the_hood';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mathematical details" href="07-mathematical_details.html" />
+    <link rel="prev" title="Specifying Multivariate Effect Size" href="05-multisim_effect_size.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -138,7 +140,7 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Tutorials
   </a>
@@ -193,10 +195,8 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -218,7 +218,7 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Tutorials
   </a>
@@ -233,6 +233,24 @@
     
     
   </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-multisim_basic.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-multisim_kernel.html">Simulating multivariate effects based on temporal kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-multisim_intersubject_noise.html">Simulating multivariate effects with intersubject variability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-multisim_cross_temporal_generalization.html">Cross temporal generalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-multisim_effect_size.html">Specifying Multivariate Effect Size</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Under the hood</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-mathematical_details.html">Mathematical details</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -269,6 +287,9 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">MultiSim tutorials</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Under the hood</span></li>
   </ul>
 </nav>
@@ -391,15 +412,15 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/2538219122.py:5: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/2538219122.py:5: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[1]].plot_image(
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/2538219122.py:12: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/2538219122.py:12: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[-1]].plot_image(
 </pre></div>
 </div>
-<img alt="../_images/27cc536d74bf8c69f98a06a65aeebe368aa9626171c4b5b50b165fe612ccd976.png" src="../_images/27cc536d74bf8c69f98a06a65aeebe368aa9626171c4b5b50b165fe612ccd976.png" />
+<img alt="../_images/04ced23cdd1e625b1c7b1c438d5d6949ba9fa09a2651f7bcf4678654c3f25059.png" src="../_images/04ced23cdd1e625b1c7b1c438d5d6949ba9fa09a2651f7bcf4678654c3f25059.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 1000x500 with 4 Axes&gt;]
 </pre></div>
 </div>
@@ -462,7 +483,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[1]].plot_image(
 </pre></div>
 </div>
@@ -478,7 +499,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[-1]].plot_image(
 </pre></div>
 </div>
@@ -494,7 +515,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[1]].plot_image(
 </pre></div>
 </div>
@@ -510,7 +531,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[-1]].plot_image(
 </pre></div>
 </div>
@@ -526,7 +547,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[1]].plot_image(
 </pre></div>
 </div>
@@ -542,7 +563,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[-1]].plot_image(
 </pre></div>
 </div>
@@ -558,7 +579,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[1]].plot_image(
 </pre></div>
 </div>
@@ -574,7 +595,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[-1]].plot_image(
 </pre></div>
 </div>
@@ -590,7 +611,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:19: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[1]].plot_image(
 </pre></div>
 </div>
@@ -606,15 +627,15 @@ Precisely because the effects are reduced to different amplitudes in a single ch
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12792/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_12758/499238379.py:26: RuntimeWarning: Cannot find channel coordinates in the supplied Evokeds. Not showing channel locations.
   epochs[X_category.groups[-1]].plot_image(
 </pre></div>
 </div>
-<img alt="../_images/62e33650a5e279dac78411d0a161324d433d86fe8460059e65174aaa253dc10f.png" src="../_images/62e33650a5e279dac78411d0a161324d433d86fe8460059e65174aaa253dc10f.png" />
+<img alt="../_images/3c5aa6875488a4610e274afd82f8fe38adbf618ab2264587723276452c8063ce.png" src="../_images/3c5aa6875488a4610e274afd82f8fe38adbf618ab2264587723276452c8063ce.png" />
 </div>
 </div>
 <p>The results show that some channels exhibit positive amplitudes for <code class="docutils literal notranslate"><span class="pre">face</span></code> trials, while others show negative amplitudes. Conversely, the opposite amplitudes are consistently observed for <code class="docutils literal notranslate"><span class="pre">object</span></code> trials. Notably, the amplitude at each channel is much smaller than the effect amplitude specified, as the effect is distributed across multiple channels.</p>
-<p>As shown in these examples, the simulator injects a signal of a particular amplitude for each condition and channel at the specified time points. The amplitude in each channel and condition is chosen at random, but remains the same across all trials of each condition, thereby yielding a robust across-channels pattern that classifiers can detect. In the <a class="reference internal" href="#06-mathematical_details.ipynb"><span class="xref myst">next tutorial</span></a>, we provide the full mathematical details of how the simulation works.</p>
+<p>As shown in these examples, the simulator injects a signal of a particular amplitude for each condition and channel at the specified time points. The amplitude in each channel and condition is chosen at random, but remains the same across all trials of each condition, thereby yielding a robust across-channels pattern that classifiers can detect. In the <a class="reference internal" href="07-mathematical_details.html"><span class="std std-doc">next tutorial</span></a>, we provide the full mathematical details of how the simulation works.</p>
 </section>
 </section>
 
@@ -628,6 +649,24 @@ Precisely because the effects are reduced to different amplitudes in a single ch
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="05-multisim_effect_size.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Specifying Multivariate Effect Size</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07-mathematical_details.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mathematical details</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -657,7 +696,7 @@ Precisely because the effects are reduced to different amplitudes in a single ch
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/tutorial/06_under_the_hood.ipynb.txt"
+      <li><a href="../_sources/tutorial/06-under_the_hood.ipynb.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>
