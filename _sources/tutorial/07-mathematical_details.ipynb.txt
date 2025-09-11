@@ -101,7 +101,7 @@
     "\n",
     "$$1 - \\Phi(-\\frac{1}{2}d')$$\n",
     "\n",
-    "Thus an effect size of $d'=0.5$ implies a theoretical ceiling of ≈ 69 % accuracy, $d'=1$ gives ≈ 84 %, and so on.  By scaling the injected pattern according to the formula above, **multisim** ensures that simulated data respect this relationship irrespective of the number of channels or their covariance.\n",
+    "Thus an effect size of $d'=0.5$ implies a theoretical ceiling of ≈ 59 % accuracy, $d'=1$ gives ≈ 69 %, and so on.  By scaling the injected pattern according to the formula above, **multisim** ensures that simulated data respect this relationship irrespective of the number of channels or their covariance.\n",
     "\n",
     "\n",
     "## References\n",
