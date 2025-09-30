@@ -327,7 +327,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 \[\Phi(d'/2)\]</div>
 <section id="trials-per-subject">
 <h2>Trials per subject<a class="headerlink" href="#trials-per-subject" title="Link to this heading">#</a></h2>
-<p>It’s well known that <strong>more trials</strong> generally improve decoding accuracy—but only <strong>up to a point</strong>.  For any fixed effect size <span class="math notranslate nohighlight">\(d'\)</span>, there is a <strong>ceiling</strong> on accuracy (e.g. <span class="math notranslate nohighlight">\(d'=0.5\)</span> → ~60 %).</p>
+<p>It’s well known that <strong>more trials</strong> generally improve decoding accuracy—but only <strong>up to a point</strong>.  For any fixed effect size <span class="math notranslate nohighlight">\(d'\)</span>, there is a <strong>ceiling</strong> on accuracy (e.g. <span class="math notranslate nohighlight">\(d'=1\)</span> → ~69 %).</p>
 <p>To illustrate this, we can simulate data with 20, 40, 80 or 160 trials per condition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -365,8 +365,8 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 
 <span class="c1"># Specifying the effects:</span>
 <span class="n">effects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> 
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> 
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
     <span class="p">]</span>  <span class="c1"># Packaging them in a list to pass to the simulator class</span>
 </pre></div>
 </div>
@@ -438,7 +438,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b9b4c32fbd35265a2ff6fc58de18727986b1720aa448cfb196bafee596509ac9.png" src="../_images/b9b4c32fbd35265a2ff6fc58de18727986b1720aa448cfb196bafee596509ac9.png" />
+<img alt="../_images/63eb48fa12b1249084142f322d5c9890e16903c7818ceac6ce67a83586d09a03.png" src="../_images/63eb48fa12b1249084142f322d5c9890e16903c7818ceac6ce67a83586d09a03.png" />
 </div>
 </div>
 <p>As we can see, increasing the number of trials only helps until a certain point. There is not so big of a difference between 160 and 320 trials.</p>
@@ -505,7 +505,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/10ff7d8730112a4aa950d9dd5d459964291a0a84d7625790479953117a2a3071.png" src="../_images/10ff7d8730112a4aa950d9dd5d459964291a0a84d7625790479953117a2a3071.png" />
+<img alt="../_images/379dfb07e2903a7f02ea06455ec6381dbccc2f8e54c618f38f7cd52e666f39a1.png" src="../_images/379dfb07e2903a7f02ea06455ec6381dbccc2f8e54c618f38f7cd52e666f39a1.png" />
 </div>
 </div>
 </section>
@@ -578,7 +578,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/15acc8914ceeb941f112fffcf9d072998ad2074cf7b6f0789fd141cb56f5e33b.png" src="../_images/15acc8914ceeb941f112fffcf9d072998ad2074cf7b6f0789fd141cb56f5e33b.png" />
+<img alt="../_images/eae6cbc3d8fde2b2c2b3fe2fcfa83797d242a5377db665d4214e4fd67e11d100.png" src="../_images/eae6cbc3d8fde2b2c2b3fe2fcfa83797d242a5377db665d4214e4fd67e11d100.png" />
 </div>
 </div>
 <p>Surprisingly, the decoding accuracy decreases with increased number of channels, which shouldn’t happen based on our normalization. However, this behavior is expected. When we increase the number of features, we need to decrease the magnitude of the activation in each channel that are part of the pattern to yield a similar theoretical effect size. If we kept the magnitude the same, we would increase the effect size when increasing the number of channels. However, by decreasing the magnitude in each channel, we make it harder to discriminate from the noise of the signal, explaining the decrease in decoding accuracy.</p>
@@ -609,8 +609,8 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
                  <span class="n">columns</span><span class="o">=</span><span class="n">cond_names</span><span class="p">)</span>
 <span class="c1"># Specifying the effects:</span>
 <span class="n">effects</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span> 
-    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span> 
+    <span class="p">{</span><span class="s2">&quot;condition&quot;</span><span class="p">:</span> <span class="s1">&#39;attention&#39;</span><span class="p">,</span> <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;effect_size&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
     <span class="p">]</span>  <span class="c1"># Packaging them in a list to pass to the simulator class</span>
 
 <span class="c1"># Simulate the data:</span>
@@ -687,13 +687,13 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.894579
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-3.130006274634226 max=7.411606687496753
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-1.9617653169731115 max=3.7558748372719886
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 4 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 5 clusters
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
@@ -703,16 +703,16 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting (exact test) : 0/255 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | Permuting (exact test) : 199/255 [00:00&lt;00:00, 5710.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | Permuting (exact test) : 200/255 [00:00&lt;00:00, 5616.11it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5581.37it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5511.85it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="../_images/9593b2e4510497e463d1e9af0ee07da8835fadbd1ca0c2eebdd4f9a52bf57c56.png" src="../_images/9593b2e4510497e463d1e9af0ee07da8835fadbd1ca0c2eebdd4f9a52bf57c56.png" />
+<img alt="../_images/169178acc36e07627fdccd054169ab41741ef120ed18536f29d2fa9b5830f78b.png" src="../_images/169178acc36e07627fdccd054169ab41741ef120ed18536f29d2fa9b5830f78b.png" />
 </div>
 </div>
 <p>Crucially, you should decide on the number of trials per subject to make sure you approach the ceiling decoding accuracy based on your effect size, and you should select the number of subjects to be able to detect an effect of that magnitude in your sample.</p>
@@ -793,7 +793,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of subjects&#39;)
 </pre></div>
 </div>
-<img alt="../_images/081fe6c2710ec8d420190932585bff8af726204e0168173cfe22a8373cf1c3ab.png" src="../_images/081fe6c2710ec8d420190932585bff8af726204e0168173cfe22a8373cf1c3ab.png" />
+<img alt="../_images/3cfe8d0e94c80e55d04d913055ef64651a6c83a3c6059ef710ac907dfd38eb32.png" src="../_images/3cfe8d0e94c80e55d04d913055ef64651a6c83a3c6059ef710ac907dfd38eb32.png" />
 </div>
 </div>
 </section>
