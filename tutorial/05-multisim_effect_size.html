@@ -438,7 +438,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/f054983a7a0b1d77143d95418159365b2ad0317b36c6797d82f73ea667df40fd.png" src="../_images/f054983a7a0b1d77143d95418159365b2ad0317b36c6797d82f73ea667df40fd.png" />
+<img alt="../_images/50007f01fdee216cb2bb7cc614b1359510c2c8a859d19585fbdc441a98660b91.png" src="../_images/50007f01fdee216cb2bb7cc614b1359510c2c8a859d19585fbdc441a98660b91.png" />
 </div>
 </div>
 <p>As we can see, increasing the number of trials only helps until a certain point. There is not so big of a difference between 160 and 320 trials.</p>
@@ -505,7 +505,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/4a91c34b2332b6df34b1422a39ab1969ed4e352f4c0bfe0fdc71a9b74b32f789.png" src="../_images/4a91c34b2332b6df34b1422a39ab1969ed4e352f4c0bfe0fdc71a9b74b32f789.png" />
+<img alt="../_images/d086106a778552527e702fb8bb397d0a0b1791d6c8bb1213aa650c049d3d81ab.png" src="../_images/d086106a778552527e702fb8bb397d0a0b1791d6c8bb1213aa650c049d3d81ab.png" />
 </div>
 </div>
 </section>
@@ -578,7 +578,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/ddeab75cd5991ee80e914b240fcd0f6bd763203bd9b9b0fcee7088e5d17ad1f4.png" src="../_images/ddeab75cd5991ee80e914b240fcd0f6bd763203bd9b9b0fcee7088e5d17ad1f4.png" />
+<img alt="../_images/9a45d09b622e10f936fed9401888077c2a6c52257d26355e17d6b2ab6b0a12ef.png" src="../_images/9a45d09b622e10f936fed9401888077c2a6c52257d26355e17d6b2ab6b0a12ef.png" />
 </div>
 </div>
 <p>Surprisingly, the decoding accuracy decreases with increased number of channels, which shouldn’t happen based on our normalization. However, this behavior is expected. When we increase the number of features, we need to decrease the magnitude of the activation in each channel that are part of the pattern to yield a similar theoretical effect size. If we kept the magnitude the same, we would increase the effect size when increasing the number of channels. However, by decreasing the magnitude in each channel, we make it harder to discriminate from the noise of the signal, explaining the decrease in decoding accuracy.</p>
@@ -687,7 +687,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.894579
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.5897033412682333 max=3.56866964379451
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.7661373852944875 max=3.7028118385697724
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
@@ -703,16 +703,16 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting (exact test) : 0/255 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | Permuting (exact test) : 200/255 [00:00&lt;00:00, 5596.88it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | Permuting (exact test) : 196/255 [00:00&lt;00:00, 5665.13it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5428.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5543.33it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="../_images/f769a60aee73e72bfeb658ebfe25c7eb8288f2daf6762371d3b3fd276dcd1dc0.png" src="../_images/f769a60aee73e72bfeb658ebfe25c7eb8288f2daf6762371d3b3fd276dcd1dc0.png" />
+<img alt="../_images/8d4b3461d0d65a59351e6b912cf22e3f7c001f8741daa92ec25d87251087a036.png" src="../_images/8d4b3461d0d65a59351e6b912cf22e3f7c001f8741daa92ec25d87251087a036.png" />
 </div>
 </div>
 <p>Crucially, you should decide on the number of trials per subject to make sure you approach the ceiling decoding accuracy based on your effect size, and you should select the number of subjects to be able to detect an effect of that magnitude in your sample.</p>
@@ -793,7 +793,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of subjects&#39;)
 </pre></div>
 </div>
-<img alt="../_images/db814e09faba8e9343b6e3e79f0e584c30e3bedb9b91a11de668d7a8fb9f04b1.png" src="../_images/db814e09faba8e9343b6e3e79f0e584c30e3bedb9b91a11de668d7a8fb9f04b1.png" />
+<img alt="../_images/3d2f250bf95a0e1fc1ef1b3ee409af1d04b4a2e46ac631c8518c3814646ffd91.png" src="../_images/3d2f250bf95a0e1fc1ef1b3ee409af1d04b4a2e46ac631c8518c3814646ffd91.png" />
 </div>
 </div>
 </section>
