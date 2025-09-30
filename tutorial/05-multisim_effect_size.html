@@ -438,7 +438,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/50007f01fdee216cb2bb7cc614b1359510c2c8a859d19585fbdc441a98660b91.png" src="../_images/50007f01fdee216cb2bb7cc614b1359510c2c8a859d19585fbdc441a98660b91.png" />
+<img alt="../_images/0c914b8b4fc0e321412d6814f849af583efa3b5348f89d014b53329eead8bb20.png" src="../_images/0c914b8b4fc0e321412d6814f849af583efa3b5348f89d014b53329eead8bb20.png" />
 </div>
 </div>
 <p>As we can see, increasing the number of trials only helps until a certain point. There is not so big of a difference between 160 and 320 trials.</p>
@@ -505,7 +505,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/d086106a778552527e702fb8bb397d0a0b1791d6c8bb1213aa650c049d3d81ab.png" src="../_images/d086106a778552527e702fb8bb397d0a0b1791d6c8bb1213aa650c049d3d81ab.png" />
+<img alt="../_images/6a5985df79025fce1ef510f176b2eb4846a4ccdf69286878fdd5b6cbebc8300f.png" src="../_images/6a5985df79025fce1ef510f176b2eb4846a4ccdf69286878fdd5b6cbebc8300f.png" />
 </div>
 </div>
 </section>
@@ -578,7 +578,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sensor space decoding&#39;)
 </pre></div>
 </div>
-<img alt="../_images/9a45d09b622e10f936fed9401888077c2a6c52257d26355e17d6b2ab6b0a12ef.png" src="../_images/9a45d09b622e10f936fed9401888077c2a6c52257d26355e17d6b2ab6b0a12ef.png" />
+<img alt="../_images/29851ec7cf31b6498a16b4dac1e88eb35a8e334dd2abffc22f29302db5a875e0.png" src="../_images/29851ec7cf31b6498a16b4dac1e88eb35a8e334dd2abffc22f29302db5a875e0.png" />
 </div>
 </div>
 <p>Surprisingly, the decoding accuracy decreases with increased number of channels, which shouldn’t happen based on our normalization. However, this behavior is expected. When we increase the number of features, we need to decrease the magnitude of the activation in each channel that are part of the pattern to yield a similar theoretical effect size. If we kept the magnitude the same, we would increase the effect size when increasing the number of channels. However, by decreasing the magnitude in each channel, we make it harder to discriminate from the noise of the signal, explaining the decrease in decoding accuracy.</p>
@@ -687,13 +687,13 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using a threshold of 1.894579
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-2.7661373852944875 max=3.7028118385697724
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stat_fun(H1): min=-7.254840976432178 max=4.778394646915411
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running initial clustering …
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 4 clusters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 5 clusters
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
@@ -703,16 +703,16 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | Permuting (exact test) : 0/255 [00:00&lt;?,       ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | Permuting (exact test) : 196/255 [00:00&lt;00:00, 5665.13it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|███████▍  | Permuting (exact test) : 190/255 [00:00&lt;00:00, 5478.87it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5543.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| Permuting (exact test) : 255/255 [00:00&lt;00:00, 5258.09it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<img alt="../_images/8d4b3461d0d65a59351e6b912cf22e3f7c001f8741daa92ec25d87251087a036.png" src="../_images/8d4b3461d0d65a59351e6b912cf22e3f7c001f8741daa92ec25d87251087a036.png" />
+<img alt="../_images/38e6d8530c3cae3dbf85b2e4c4ee1b16e1f71c27db34e113d96eb6320c7c9d3f.png" src="../_images/38e6d8530c3cae3dbf85b2e4c4ee1b16e1f71c27db34e113d96eb6320c7c9d3f.png" />
 </div>
 </div>
 <p>Crucially, you should decide on the number of trials per subject to make sure you approach the ceiling decoding accuracy based on your effect size, and you should select the number of subjects to be able to detect an effect of that magnitude in your sample.</p>
@@ -793,7 +793,7 @@ d' = \frac{\mu_{1} - \mu_{2}}{\sigma}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of subjects&#39;)
 </pre></div>
 </div>
-<img alt="../_images/3d2f250bf95a0e1fc1ef1b3ee409af1d04b4a2e46ac631c8518c3814646ffd91.png" src="../_images/3d2f250bf95a0e1fc1ef1b3ee409af1d04b4a2e46ac631c8518c3814646ffd91.png" />
+<img alt="../_images/2aa60408c194425dc48279ef51f37848f57bc2bf50775140b4b6ee2293ffba35.png" src="../_images/2aa60408c194425dc48279ef51f37848f57bc2bf50775140b4b6ee2293ffba35.png" />
 </div>
 </div>
 </section>
